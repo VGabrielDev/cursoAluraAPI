@@ -1,5 +1,5 @@
 import express from "express"
-import conectarNaDatabase from "./src/config/dbConnect.js";
+import conectarNaDatabase from "./config/dbConnect.js";
 
 const conexao = await conectarNaDatabase();
 
