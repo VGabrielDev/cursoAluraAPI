@@ -12,15 +12,8 @@ conexao.once("open", () => {
 });
 
 const app = express(); 
-const port = 3000; 
 
 app.use(express.json());
-
-app.listen(port, ( ) => {
-    console.log("Rodando na porta 3000")
-});
-
-
 
 function buscarPeloId(id){
  const buscado = pessoas.find(pessoa => {
