@@ -16,13 +16,9 @@ const app = express();
 
 app.use(express.json());
 
-function buscarPeloId(id){
- const buscado = pessoas.find(pessoa => {
-   return pessoa.id === Number(id); 
-})
 
-return buscado
-}
+
+
 
 function buscarindice(id){
 
