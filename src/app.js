@@ -1,5 +1,6 @@
 import express from "express"
 import conectarNaDatabase from "./config/dbConnect.js";
+import pessoa from "./models/Pessoa.js";
 
 const conexao = await conectarNaDatabase();
 
