@@ -16,10 +16,6 @@ const app = express();
 
 app.use(express.json());
 
-
-
-
-
 function buscarindice(id){
 
     return pessoas.findIndex( pessoas => {
@@ -27,8 +23,9 @@ function buscarindice(id){
     })
 };
 
-app.get("/pessoas", (req, res)=>{
-res.status(200).send(pessoas);
+app.get("/pessoas", async (req, res) => {
+  const listaPessoas = await pessoa.find({});
+res.status(200).send(listaPessoas);
 });
 
 app.get("/:id", (req, res) => {
