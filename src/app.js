@@ -23,12 +23,6 @@ function buscarindice(id){
     })
 };
 
-app.get("/pessoas", async (req, res) => {
-  const listaPessoas = await pessoas.find({});
-  console.log(listaPessoas);
-res.status(200).json(listaPessoas);
-});
-
 app.get("/:id", (req, res) => {
     const id = req.params.id;
     let encontrado = buscarPeloId(id)
