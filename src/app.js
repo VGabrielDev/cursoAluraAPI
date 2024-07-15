@@ -1,6 +1,6 @@
 import express from "express"
 import conectarNaDatabase from "./config/dbConnect.js";
-import pessoa from "./models/Pessoa.js";
+import pessoas from "./models/Pessoa.js";
 
 const conexao = await conectarNaDatabase();
 
@@ -24,8 +24,9 @@ function buscarindice(id){
 };
 
 app.get("/pessoas", async (req, res) => {
-  const listaPessoas = await pessoa.find({});
-res.status(200).send(listaPessoas);
+  const listaPessoas = await pessoas.find({});
+  console.log(listaPessoas);
+res.status(200).json(listaPessoas);
 });
 
 app.get("/:id", (req, res) => {
