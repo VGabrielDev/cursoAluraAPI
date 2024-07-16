@@ -23,11 +23,11 @@ function buscarindice(id){
     })
 };
 
-app.get("/:id", (req, res) => {
-    const id = req.params.id;
-    let encontrado = buscarPeloId(id)
-    res.status(200).send(encontrado);
-});
+// app.get("/:id", (req, res) => {
+//     const id = req.params.id;
+//     let encontrado = buscarPeloId(id)
+//     res.status(200).send(encontrado);
+// });
 
 app.post("/pessoas", (req, res) => {
     pessoas.push(req.body);
