@@ -16,32 +16,6 @@ conexao.once("open", () => {
 const app = express();
 routes(app);
 
-function buscarindice(id){
-
-    return pessoas.findIndex( pessoas => {
-        return pessoas.id === Number(id)
-    })
-};
-
-// app.get("/:id", (req, res) => {
-//     const id = req.params.id;
-//     let encontrado = buscarPeloId(id)
-//     res.status(200).send(encontrado);
-// });
-
-app.post("/pessoas", (req, res) => {
-    pessoas.push(req.body);
-    res.status(201).send("Pessoa cadastrada");
-});
-
-app.put("/pessoa/:id", (req, res) => {
-
-    const indice = buscarindice(req.params.id); 
-    pessoas[indice] = req.body; 
-    res.status(200).send("Alterado");
-
-});
-
 app.delete("/pessoa/:id", (req, res) => {
 
     const indice = buscarindice(req.params.id); 
