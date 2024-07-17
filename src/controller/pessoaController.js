@@ -21,8 +21,6 @@ class PessoaController {
         }
     };
 
-
-
     static async cadastrarPessoa(req, res){
      try{
         const novaPessoa = await pessoas.create(req.body); 
@@ -31,6 +29,16 @@ class PessoaController {
         res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
      }
     }
+
+    static async atualizarPessoa(req, res){
+        try{
+            const id = req.params.id 
+            await pessoas.findByIdAndUpdate(id, req.body);
+            res.status(200).json({message: "pessoa atualizada"});
+        }catch(erro){
+            res.status(500).json({message: `${erro.message} - falha na requisição da pessoa`});
+        }
+    };
 };
 
 export default PessoaController;
