@@ -12,7 +12,7 @@ class PessoaController {
         const novaPessoa = await pessoas.create(req.body); 
         res.status(201).json({message: "cadastrado com sucesso", pessoas:novaPessoa});
      }catch(erro){
-        res.status(500).json({message: `${erro.message} - falha ao cadastrar livro`});
+        res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
      }
     }
 };
