@@ -3,8 +3,12 @@ import pessoas from "../models/Pessoa.js";
 class PessoaController {
 
     static async listarPessoas(req, res){
-        const listaPessoas = await pessoas.find({});
-        res.status(200).json(listaPessoas);
+        try{
+            const listaPessoas = await pessoas.find({});
+            res.status(200).json(listaPessoas);
+        }catch(erro){
+            res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
+        }
     }
 
     static async cadastrarPessoa(req, res){
