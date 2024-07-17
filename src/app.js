@@ -1,6 +1,7 @@
 import express from "express"
 import conectarNaDatabase from "./config/dbConnect.js";
 import pessoas from "./models/Pessoa.js";
+import routes from "./routes/index.js";
 
 const conexao = await conectarNaDatabase();
 
@@ -12,9 +13,8 @@ conexao.once("open", () => {
     console.log("conexão com o banco feita com sucesso")
 });
 
-const app = express(); 
-
-app.use(express.json());
+const app = express();
+routes(app);
 
 function buscarindice(id){
 
