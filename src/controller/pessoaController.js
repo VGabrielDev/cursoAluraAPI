@@ -9,7 +9,19 @@ class PessoaController {
         }catch(erro){
             res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
         }
-    }
+    };
+
+    static async listarPessoasPorId(req, res){
+        try{
+            const id = req.params.id 
+            const pessoaEncontrada = await pessoas.findById(id);
+            res.status(200).json(listaPessoas);
+        }catch(erro){
+            res.status(500).json({message: `${erro.message} - falha na requisição do livro`});
+        }
+    };
+
+
 
     static async cadastrarPessoa(req, res){
      try{
