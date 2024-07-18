@@ -15,7 +15,7 @@ class PessoaController {
         try{
             const id = req.params.id 
             const pessoaEncontrada = await pessoas.findById(id);
-            res.status(200).json(listaPessoas);
+            res.status(200).json(pessoaEncontrada);
         }catch(erro){
             res.status(500).json({message: `${erro.message} - falha na requisição do livro`});
         }
