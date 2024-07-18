@@ -7,5 +7,6 @@ routes.get("/pessoas",PessoaController.listarPessoas);
 routes.get("/pessoas/:id",PessoaController.listarPessoasPorId);
 routes.post("/pessoas",PessoaController.cadastrarPessoa);
 routes.put("/pessoas/:id",PessoaController.atualizarPessoa);
+routes.delete("/pessoas/:id", PessoaController.deletarPessoa);
 
 export default routes;
