@@ -9,4 +9,4 @@ const criancasSchema = new mongoose.Schema({
 
 const criancas = mongoose.model("criancas", criancasSchema);
 
-export default criancas; 
+export{criancas, criancasSchema}; 
