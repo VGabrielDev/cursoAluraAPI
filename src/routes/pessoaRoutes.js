@@ -1,5 +1,5 @@
 import express from "express"; 
-import PessoaController from "../controller/pessoaController.js"; 
+import PessoaController from "../controller/adultoController.js"; 
 
 const routes = express.Router();
 
