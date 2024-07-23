@@ -1,6 +1,6 @@
 import { MongoOIDCError } from "mongodb";
 import mongoose from "mongoose";
-import { criancas, criancasSchema} from "./Crianca";
+import {criancasSchema} from "./Crianca";
 
 // definindo estrutura e propriedades do documento
 const pessoasSchema = new mongoose.Schema({
