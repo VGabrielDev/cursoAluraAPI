@@ -1,5 +1,5 @@
 import express from "express";
-import pessoas from "./pessoaRoutes.js";
+import pessoas from "./adultoRoutes.js";
 import criancas from "./criancaRoutes.js";
 
 const routes = (app) => {
