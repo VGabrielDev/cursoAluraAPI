@@ -1,6 +1,6 @@
 import { MongoOIDCError } from "mongodb";
 import mongoose from "mongoose";
-import { criancasSchema} from "./Crianca";
+import { criancas, criancasSchema} from "./Crianca";
 
 // definindo estrutura e propriedades do documento
 const pessoasSchema = new mongoose.Schema({
@@ -8,7 +8,8 @@ const pessoasSchema = new mongoose.Schema({
     nome : {type: String, required: true},
     cargo : {type: String},
     idade : {type: Number},
-    qtdcriancas: {type: Number}
+    qtdcriancas: {type: Number},
+    criancas: {criancasSchema}
 }, {versionKey: false});
 
 const pessoas = mongoose.model("pessoas", pessoasSchema);
