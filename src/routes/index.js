@@ -1,6 +1,6 @@
 import express from "express";
 import pessoas from "./pessoaRoutes.js";
-import criancas from "../models/Crianca.js";
+import criancas from "./criancaRoutes.js";
 
 const routes = (app) => {
 app.route("/").get((req, res) => res.status(200).send("Curso de Node.js"))
