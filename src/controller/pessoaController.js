@@ -17,7 +17,7 @@ class PessoaController {
             const pessoaEncontrada = await pessoas.findById(id);
             res.status(200).json(pessoaEncontrada);
         }catch(erro){
-            res.status(500).json({message: `${erro.message} - falha na requisição do livro`});
+            res.status(500).json({message: `${erro.message} - falha na requisição`});
         }
     };
 
@@ -36,7 +36,7 @@ class PessoaController {
             await pessoas.findByIdAndUpdate(id, req.body);
             res.status(200).json({message: "pessoa atualizada"});
         }catch(erro){
-            res.status(500).json({message: `${erro.message} - falha na requisição da pessoa`});
+            res.status(500).json({message: `${erro.message} - falha na requisição`});
         }
     };
 
