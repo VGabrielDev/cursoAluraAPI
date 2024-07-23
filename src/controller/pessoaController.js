@@ -1,4 +1,4 @@
-import pessoas from "../models/Pessoa.js";
+import pessoas from "../models/Adulto.js";
 import { criancas } from "../models/Crianca.js";
 
 class PessoaController {

@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import {criancasSchema} from "./Crianca.js";
 
 // definindo estrutura e propriedades do documento
-const pessoasSchema = new mongoose.Schema({
+const adultosSchema = new mongoose.Schema({
     id: {type: mongoose.Schema.Types.ObjectId},
     nome : {type: String, required: true},
     cargo : {type: String},
@@ -12,6 +12,6 @@ const pessoasSchema = new mongoose.Schema({
     criancas: criancasSchema
 }, {versionKey: false});
 
-const pessoas = mongoose.model("pessoas", pessoasSchema);
+const adultos = mongoose.model("adultos", adultosSchema);
 
-export default pessoas; 
+export default adultos; 
