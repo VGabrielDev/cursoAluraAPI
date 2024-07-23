@@ -22,8 +22,11 @@ class PessoaController {
     };
 
     static async cadastrarPessoa(req, res){
+        const novaPessoa = req.body; 
      try{
-        const novaPessoa = await pessoas.create(req.body); 
+        const criancaEncontrada = await criancas.findById(novaPessoa.criancas)
+        const pessoaCompleta = {...novaPessoa, criancas: {... criancaEncontrada._doc}}
+        const pessoaCriada = await pessoas.create(pessoaCompleta);
         res.status(201).json({message: "cadastrado com sucesso", pessoas:novaPessoa});
      }catch(erro){
         res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
