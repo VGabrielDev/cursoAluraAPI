@@ -23,7 +23,7 @@ class CriancaController {
 
     static async cadastrarCrianca(req, res){
      try{
-        const novaCrianca = await crianca.create(req.body); 
+        const novaCrianca = await criancas.create(req.body); 
         res.status(201).json({message: "cadastrado com sucesso", criancas:novaCrianca});
      }catch(erro){
         res.status(500).json({message: `${erro.message} - falha ao cadastrar criança`});
