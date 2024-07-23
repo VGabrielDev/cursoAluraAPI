@@ -1,4 +1,4 @@
-import criancas from "../models/Crianca.js";
+import { criancas } from "../models/Crianca.js";
 
 class CriancaController {
 
