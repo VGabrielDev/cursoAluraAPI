@@ -9,7 +9,7 @@ const pessoasSchema = new mongoose.Schema({
     cargo : {type: String},
     idade : {type: Number},
     qtdcriancas: {type: Number},
-    criancas: {criancasSchema}
+    criancas: criancasSchema
 }, {versionKey: false});
 
 const pessoas = mongoose.model("pessoas", pessoasSchema);
