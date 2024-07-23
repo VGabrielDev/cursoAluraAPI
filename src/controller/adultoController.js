@@ -27,7 +27,7 @@ class AdultoController {
      try{
         const criancaEncontrada = await criancas.findById(novoAdulto.criancas)
         const adultoCompleto = {...novoAdulto, criancas: {... criancaEncontrada._doc}}
-        const adultoCriado = await pessoas.create(adultoCompleto);
+        const adultoCriado = await adultos.create(adultoCompleto);
         res.status(201).json({message: "cadastrado com sucesso", pessoas:novoAdulto});
      }catch(erro){
         res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
