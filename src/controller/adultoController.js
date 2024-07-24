@@ -16,6 +16,7 @@ class AdultoController {
         try{
             const idCrianca = req.query.id;
             const adultosEncontrados = await  adultos.findById({criancas : id})
+            res.status(200).json(adultosEncontrados);
         }catch(erro){
             res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
         }
