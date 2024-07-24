@@ -11,16 +11,6 @@ class CriancaController {
         }
     };
 
-    static async buscarCriancasPorPessoa(req, res){
-        const pessoa = req.query.nome;
-        try{
-            const criancasDaPessoa = await criancas.find({nome : pessoa})
-            res.status(200).json(criancasDaPessoa);
-        }catch(erro){
-            res.status(500).json({message: `${erro.message} - falha na requisição`});
-        }
-    };
-
     static async listarCriancasPorId(req, res){
         try{
             const id = req.params.id 
