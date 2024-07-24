@@ -12,6 +12,16 @@ class AdultoController {
         }
     };
 
+    static async listarAdultosPorIdCrianca(req, res){
+        try{
+            const idCrianca = req.body.id;
+            const criancaEncontrada = criancas.findById(id);
+            const adultosEncontrados = adultos.findById(criancas.id = id)
+        }catch(erro){
+            res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
+        }
+    };
+
     static async listarAdultosPorId(req, res){
         try{
             const id = req.params.id 
