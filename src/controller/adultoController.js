@@ -8,7 +8,7 @@ class AdultoController {
             const listaAdultos = await adultos.find({});
             res.status(200).json(listaAdultos);
         }catch(erro){
-            res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
+            res.status(500).json({message: `${erro.message} - falha ao cadastrar adulto`});
         }
     };
 
@@ -19,7 +19,7 @@ class AdultoController {
             const adultosEncontrados = await adultos.find({criancas : criancaEncontrada});
             res.status(200).json(adultosEncontrados);
         }catch(erro){
-            res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa nnnn`});
+            res.status(500).json({message: `${erro.message} - falha ao cadastrar adulto`});
         }
     };
 
@@ -40,14 +40,14 @@ class AdultoController {
         if(criancaEncontrada){
             const adultoCompleto = {...novoAdulto, criancas: {... criancaEncontrada._doc}}
             const adultoCriado = await adultos.create(adultoCompleto);
-            res.status(201).json({message: "cadastrado com sucesso", pessoas:novoAdulto});
+            res.status(201).json({message: "cadastrado com sucesso", adultos:novoAdulto});
         }else{
             const adultoCriado = await adultos.create(novoAdulto);
-            res.status(201).json({message: "cadastrado com sucesso", pessoas:novoAdulto});
+            res.status(201).json({message: "cadastrado com sucesso", adultos:novoAdulto});
         };
 
      }catch(erro){
-        res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
+        res.status(500).json({message: `${erro.message} - falha ao cadastrar adulto`});
      }
     }
 
