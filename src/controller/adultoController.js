@@ -15,10 +15,11 @@ class AdultoController {
     static async listarAdultosPorIdCrianca(req, res){
         try{
             const idCrianca = req.query.id;
-            const adultosEncontrados = await  adultos.findById({criancas : id})
+            const criancaEncontrada = await criancas.findById(idCrianca);
+            const adultosEncontrados = await adultos.find({criancas : criancaEncontrada});
             res.status(200).json(adultosEncontrados);
         }catch(erro){
-            res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa`});
+            res.status(500).json({message: `${erro.message} - falha ao cadastrar pessoa nnnn`});
         }
     };
 
